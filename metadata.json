@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Rekap & Dokumen Online",
+  "description": "Aplikasi upload, rekapitulasi, dan penyimpanan dokumen aman dengan proteksi kata sandi dan integrasi Google Drive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
