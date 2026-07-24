@@ -73,7 +73,7 @@ export const DocumentCards: React.FC<DocumentCardsProps> = ({
           onClick={onOpenUnlockModal}
           className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md"
         >
-          Buka Password (Default: admin)
+          
         </button>
       </div>
     );

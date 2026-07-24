@@ -61,7 +61,7 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({ isOpen, onSuccess,
               Proteksi Keamanan Data
             </p>
             <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-              Password default sistem adalah <span className="font-mono font-bold bg-white dark:bg-slate-900 px-1 py-0.5 rounded text-blue-600 dark:text-blue-400 border border-slate-200 dark:border-slate-700">admin</span>. Anda dapat mengubahnya kapan saja melalui menu Pengaturan Profil.
+               <span className="font-mono font-bold bg-white dark:bg-slate-900 px-1 py-0.5 rounded text-blue-600 dark:text-blue-400 border border-slate-200 dark:border-slate-700">admin</span>. Anda dapat mengubahnya kapan saja melalui menu Pengaturan Profil.
             </p>
           </div>
         </div>

@@ -109,7 +109,7 @@ export const DocumentTable: React.FC<DocumentTableProps> = ({
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-lg shadow-blue-500/30 transition-all flex items-center gap-2"
             >
               <Lock className="w-4 h-4" />
-              <span>Masukkan Password (Default: admin)</span>
+              <span></span>
             </button>
           </div>
         </div>
