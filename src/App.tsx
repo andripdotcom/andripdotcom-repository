@@ -34,8 +34,14 @@ import { CategoryManagerModal } from './components/CategoryManagerModal';
 import { ProfileSettingsModal } from './components/ProfileSettingsModal';
 import { GoogleDrivePickerModal } from './components/GoogleDrivePickerModal';
 import { DeletePasswordModal } from './components/DeletePasswordModal';
+import { LoginScreen } from './components/LoginScreen';
 
 export default function App() {
+  // App Login Session State
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
+    return sessionStorage.getItem('doc_rekap_logged_in') === 'true';
+  });
+
   // Application Data States
   const [documents, setDocuments] = useState<DocumentItem[]>(() => getStoredDocuments());
   const [categories, setCategories] = useState<CategoryInfo[]>(() => getStoredCategories());
@@ -256,6 +262,18 @@ export default function App() {
     });
   }, [documents, filter]);
 
+  if (!isLoggedIn) {
+    return (
+      <LoginScreen
+        onLoginSuccess={() => {
+          setIsLoggedIn(true);
+          sessionStorage.setItem('doc_rekap_logged_in', 'true');
+          showToast('Berhasil masuk ke aplikasi!');
+        }}
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
       
@@ -279,6 +297,11 @@ export default function App() {
         isDriveConnected={!!googleUser}
         driveUserEmail={googleUser?.email || ''}
         onGoogleSignIn={handleGoogleSignIn}
+        onLogout={() => {
+          setIsLoggedIn(false);
+          sessionStorage.removeItem('doc_rekap_logged_in');
+          showToast('Berhasil keluar dari aplikasi.');
+        }}
       />
 
       {/* Main App Container */}

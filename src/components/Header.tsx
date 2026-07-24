@@ -9,7 +9,8 @@ import {
   Cloud, 
   CloudOff, 
   ShieldAlert,
-  UserCheck
+  UserCheck,
+  LogOut
 } from 'lucide-react';
 import { UserProfile } from '../types';
 
@@ -24,6 +25,7 @@ interface HeaderProps {
   isDriveConnected: boolean;
   driveUserEmail?: string;
   onGoogleSignIn: () => void;
+  onLogout?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -37,6 +39,7 @@ export const Header: React.FC<HeaderProps> = ({
   isDriveConnected,
   driveUserEmail,
   onGoogleSignIn,
+  onLogout,
 }) => {
   return (
     <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-30 shadow-md">
@@ -148,6 +151,17 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="hidden lg:inline truncate max-w-[100px]">{userProfile.name}</span>
               <Settings className="w-3.5 h-3.5 text-slate-400" />
             </button>
+
+            {/* Logout / Lock App Session Button */}
+            {onLogout && (
+              <button
+                onClick={onLogout}
+                className="p-2 rounded-lg text-rose-400 hover:text-rose-300 hover:bg-rose-950/40 border border-slate-800 hover:border-rose-900/50 transition-all"
+                title="Keluar / Kunci Aplikasi"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
+            )}
 
           </div>
         </div>
