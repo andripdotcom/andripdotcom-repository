@@ -4,125 +4,22 @@ export const DEFAULT_PASSWORD = 'admin';
 
 const STORAGE_KEYS = {
   PASSWORD: 'doc_rekap_password_v1',
-  DOCUMENTS: 'doc_rekap_items_v1',
-  CATEGORIES: 'doc_rekap_categories_v1',
+  DOCUMENTS: 'doc_rekap_items_v2',
+  CATEGORIES: 'doc_rekap_categories_v2',
   USER_PROFILE: 'doc_rekap_profile_v1',
 };
 
 export const INITIAL_CATEGORIES: CategoryInfo[] = [
   { id: 'cat-1', name: 'Surat Masuk', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border-blue-200', iconName: 'Inbox', description: 'Surat dan dokumen resmi yang diterima dari pihak luar' },
   { id: 'cat-2', name: 'Surat Keluar', color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300 border-indigo-200', iconName: 'Send', description: 'Surat dan dokumen resmi yang dikeluarkan organisasi' },
-  { id: 'cat-3', name: 'Memo', color: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200', iconName: 'TrendingUp', description: 'Rekapitulasi anggaran, neraca, kwitansi, dan pertanggungjawaban' },
+  { id: 'cat-3', name: 'Memo', color: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200', iconName: 'FileText', description: 'Memo internal, nota dinas, serta instruksi singkat pimpinan' },
   { id: 'cat-4', name: 'Kontrak & Perjanjian', color: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border-amber-200', iconName: 'FileSignature', description: 'MOU, surat perjanjian kerja sama, dan dokumen legal' },
   { id: 'cat-5', name: 'Kepegawaian', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300 border-purple-200', iconName: 'Users', description: 'SK Pengangkatan, berkas SDM, data presensi, dan sertifikat' },
   { id: 'cat-6', name: 'SOP & Regulasi', color: 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300 border-rose-200', iconName: 'BookOpen', description: 'Standard Operating Procedure, petunjuk teknis, dan aturan resmi' },
   { id: 'cat-7', name: 'Lainnya', color: 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border-slate-200', iconName: 'Folder', description: 'Dokumen umum dan arsip pendukung lainnya' },
 ];
 
-export const INITIAL_DOCUMENTS: DocumentItem[] = [
-  {
-    id: 'doc-001',
-    title: 'Surat Keputusan Operasional SDM & Umum 2026',
-    docNumber: 'SK/042/DIR-SDM/VI/2026',
-    fileName: 'SK_Operasional_SDM_2026.pdf',
-    fileSize: 2450000, // 2.45 MB
-    fileType: 'pdf',
-    mimeType: 'application/pdf',
-    category: 'SOP & Regulasi',
-    description: 'Surat keputusan direksi terkait tata kelola administrasi dokumen dan jadwal piket operasional kantor pusat.',
-    uploader: 'Ahmad Subagja (Admin SDM)',
-    uploadDate: '2026-07-15',
-    tags: ['SK', 'Direksi', 'SDM', '2026'],
-    downloadUrl: 'data:text/plain;base64,RGF0YSBEb2t1bWVuIFNLIE9wZXJhc2lvbmFsIFNETSAmIFVtdW0gMjAyNi4gRG9rdW1lbiBpbmkgcmVzbWkgZGFuIHRlcmRhdnRhci4=',
-    status: 'Aktif',
-    isSyncedToDrive: true,
-  },
-  {
-    id: 'doc-002',
-    title: 'Laporan Audited Realisasi Anggaran Q2 2026',
-    docNumber: 'LAP/KEU/Q2-2026',
-    fileName: 'Laporan_Anggaran_Q2_2026.xlsx',
-    fileSize: 1850000, // 1.85 MB
-    fileType: 'xls',
-    mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    category: 'Memo',
-    description: 'Rincian pengeluaran operasional, pendapatan divisi, serta audit internal belanja inventaris TW II.',
-    uploader: 'Siti Rahmawati (Finance Lead)',
-    uploadDate: '2026-07-10',
-    tags: ['Keuangan', 'Audit', 'Q2', 'Anggaran'],
-    downloadUrl: 'data:text/plain;base64,UkVOQ0FOQSBEQU4gUkVBTElTQVNJIEFOR0dBUkFOIFEyIDIwMjYuIFRvdGFsIFBlbmdlbHVhcmFuOiBScCA0NTAuMDAwLjAwMC4=',
-    status: 'Aktif',
-    isSyncedToDrive: true,
-  },
-  {
-    id: 'doc-003',
-    title: 'Surat Perjanjian Kerjasama Sewa Gedung Kantor',
-    docNumber: 'MOU/108/LEG/2026',
-    fileName: 'MOU_Sewa_Gedung_2026.pdf',
-    fileSize: 4120000, // 4.12 MB
-    fileType: 'pdf',
-    mimeType: 'application/pdf',
-    category: 'Kontrak & Perjanjian',
-    description: 'Dokumen kesepakatan perpanjangan sewa gedung lantai 3 & 4 bersama PT Jabar Mitra Property.',
-    uploader: 'Budi Santoso (Legal Dept)',
-    uploadDate: '2026-06-28',
-    tags: ['MOU', 'Sewa', 'Legal', 'Properti'],
-    downloadUrl: 'data:text/plain;base64,R3J1cCBJbnZlc3Rhc2kgTWl0cmEgS2Vyc2FtYS4gQmVya2FzIE1PVSBTZXdhIEdlZHVuZyBDZW50cmFsIExhbnRhaSAzLTQu',
-    status: 'Rahasia',
-    isSyncedToDrive: false,
-  },
-  {
-    id: 'doc-004',
-    title: 'Surat Masuk Permohonan Audiensi Dinas Provinsi',
-    docNumber: '500/892/Disperindag/2026',
-    fileName: 'Surat_Audiensi_Dinas_Provinsi.pdf',
-    fileSize: 980000, // 980 KB
-    fileType: 'pdf',
-    mimeType: 'application/pdf',
-    category: 'Surat Masuk',
-    description: 'Undangan rapat koordinasi pemanfaatan sistem digitalisasi arsip daerah.',
-    uploader: 'Dewi Lestari (Sekretariat)',
-    uploadDate: '2026-07-20',
-    tags: ['Undangan', 'Audiensi', 'Dinas', 'Pemprov'],
-    downloadUrl: 'data:text/plain;base64,U3VyYXQgTWFzdWsgZGFyaSBEaW5hcyBQZXJpbmR1c3RyaWFuIGRhbiBQZXJkYWdhbmdhbiBKYXdhIEJhcmF0Lg==',
-    status: 'Aktif',
-    isSyncedToDrive: false,
-  },
-  {
-    id: 'doc-005',
-    title: 'Surat Balasan Kunjungan Kerja Lapangan',
-    docNumber: '088/EXT/ADM-JBR/VII/2026',
-    fileName: 'Surat_Balasan_Kunjungan_Kerja.docx',
-    fileSize: 520000, // 520 KB
-    fileType: 'doc',
-    mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    category: 'Surat Keluar',
-    description: 'Surat konfirmasi persetujuan jadwal penerimaan studi banding tim administrasi wilayah III.',
-    uploader: 'Dewi Lestari (Sekretariat)',
-    uploadDate: '2026-07-22',
-    tags: ['Surat Keluar', 'Studi Banding', 'Konfirmasi'],
-    downloadUrl: 'data:text/plain;base64,U3VyYXQgQmFsYXNhbiBLdW5qdW5nYW4gS2VyamEgTGFwYW5nYW4gS2FudG9yIFdpbGF5YWggSUlJLiA=',
-    status: 'Aktif',
-    isSyncedToDrive: true,
-  },
-  {
-    id: 'doc-006',
-    title: 'Berkas Kepegawaian & Daftar Presensi Pegawai Juni 2026',
-    docNumber: 'HRD/PRES/06-2026',
-    fileName: 'Daftar_Presensi_Juni_2026.zip',
-    fileSize: 12400000, // 12.4 MB
-    fileType: 'archive',
-    mimeType: 'application/zip',
-    category: 'Kepegawaian',
-    description: 'Kumpulan log absensi digital, form cuti pegawai, dan lampiran lembur periode Juni 2026.',
-    uploader: 'Ahmad Subagja (Admin SDM)',
-    uploadDate: '2026-07-02',
-    tags: ['HRD', 'Presensi', 'Absensi', 'Juni'],
-    downloadUrl: 'data:text/plain;base64,QXJzaXAgWm1wIEJlcmthcyBLZXBlZ2F3YWlhbiAmIERhZnRhciBQcmVzZW5zaSBKdW5pIDIwMjYu',
-    status: 'Arsip',
-    isSyncedToDrive: false,
-  }
-];
+export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 
 export const INITIAL_PROFILE: UserProfile = {
   name: 'Admin Arsip & Dokumen',
@@ -166,10 +63,24 @@ export function verifyPassword(input: string): boolean {
 // Category Storage functions
 export function getStoredCategories(): CategoryInfo[] {
   try {
-    const raw = localStorage.getItem(STORAGE_KEYS.CATEGORIES);
+    const raw = localStorage.getItem(STORAGE_KEYS.CATEGORIES) || localStorage.getItem('doc_rekap_categories_v1');
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        const cleaned = parsed.map((cat: CategoryInfo) => {
+          if (cat.name === ('Laporan Keuangan' as string)) {
+            return {
+              ...cat,
+              name: 'Memo',
+              description: 'Memo internal, nota dinas, serta instruksi singkat pimpinan',
+              iconName: 'FileText'
+            };
+          }
+          return cat;
+        });
+        saveCategories(cleaned);
+        return cleaned;
+      }
     }
   } catch (e) {
     console.warn('Error loading categories:', e);
@@ -192,13 +103,13 @@ export function getStoredDocuments(): DocumentItem[] {
     const raw = localStorage.getItem(STORAGE_KEYS.DOCUMENTS);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed)) return parsed;
     }
   } catch (e) {
     console.warn('Error loading documents:', e);
   }
-  saveDocuments(INITIAL_DOCUMENTS);
-  return INITIAL_DOCUMENTS;
+  saveDocuments([]);
+  return [];
 }
 
 export function saveDocuments(docs: DocumentItem[]) {

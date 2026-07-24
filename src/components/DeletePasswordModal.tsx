@@ -121,7 +121,7 @@ export const DeletePasswordModal: React.FC<DeletePasswordModalProps> = ({
                 type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Masukkan password untuk konfirmasi (default: admin)"
+                placeholder="Masukkan password untuk konfirmasi"
                 className="w-full pl-9 pr-10 py-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all"
                 autoFocus
                 required
@@ -135,7 +135,7 @@ export const DeletePasswordModal: React.FC<DeletePasswordModalProps> = ({
               </button>
             </div>
             <p className="text-[11px] text-slate-400 mt-1">
-              Password default sistem adalah <span className="font-mono font-bold text-slate-600 dark:text-slate-300">admin</span>.
+              Password dapat diubah di menu Pengaturan Profil.
             </p>
           </div>
 

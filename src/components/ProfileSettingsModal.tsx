@@ -72,10 +72,10 @@ export const ProfileSettingsModal: React.FC<ProfileSettingsModalProps> = ({
   };
 
   const handleResetToDefault = () => {
-    if (confirm('Reset password rekapitulasi kembali ke default "admin"?')) {
+    if (confirm('Reset password rekapitulasi ke password standar awal?')) {
       const current = getStoredPassword();
       updateStoredPassword(current, DEFAULT_PASSWORD);
-      setPwdFeedback({ type: 'success', message: 'Password berhasil di-reset ke default "admin".' });
+      setPwdFeedback({ type: 'success', message: 'Password berhasil di-reset ke standar.' });
       setCurrentPwd('');
       setNewPwd('');
       setConfirmPwd('');
@@ -157,10 +157,10 @@ export const ProfileSettingsModal: React.FC<ProfileSettingsModalProps> = ({
               <ShieldCheck className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-800 dark:text-slate-200">
-                  Password Default: admin
+                  Keamanan Akses Rekap
                 </p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                  Password digunakan untuk melindungi akses rekapituasi data dokumen dan unduhan.
+                  Password digunakan untuk melindungi akses rekapitulasi data dokumen dan unduhan.
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export const ProfileSettingsModal: React.FC<ProfileSettingsModalProps> = ({
                   type={showPwd ? 'text' : 'password'}
                   value={currentPwd}
                   onChange={(e) => setCurrentPwd(e.target.value)}
-                  placeholder="Masukkan password saat ini (default: admin)"
+                  placeholder="Masukkan password saat ini"
                   className="w-full px-3 py-2 pr-10 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs text-slate-900 dark:text-white"
                   required
                 />

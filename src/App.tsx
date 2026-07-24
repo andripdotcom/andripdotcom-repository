@@ -369,7 +369,7 @@ export default function App() {
       <footer className="mt-12 py-6 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500">
         <p>Sistem Rekap & Dokumen &copy; 2026. Hak Cipta Dilindungi Undang-Undang.</p>
         <p className="text-[11px] text-slate-400 mt-1">
-          Password Default: <span className="font-mono font-bold text-slate-600 dark:text-slate-300">admin</span> (Dapat diubah di menu Pengaturan Profil)
+          Password dapat diubah kapan saja melalui menu Pengaturan Profil.
         </p>
       </footer>
 
