@@ -12,7 +12,7 @@ const STORAGE_KEYS = {
 export const INITIAL_CATEGORIES: CategoryInfo[] = [
   { id: 'cat-1', name: 'Surat Masuk', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border-blue-200', iconName: 'Inbox', description: 'Surat dan dokumen resmi yang diterima dari pihak luar' },
   { id: 'cat-2', name: 'Surat Keluar', color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300 border-indigo-200', iconName: 'Send', description: 'Surat dan dokumen resmi yang dikeluarkan organisasi' },
-  { id: 'cat-3', name: 'Laporan Keuangan', color: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200', iconName: 'TrendingUp', description: 'Rekapitulasi anggaran, neraca, kwitansi, dan pertanggungjawaban' },
+  { id: 'cat-3', name: 'Memo', color: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200', iconName: 'TrendingUp', description: 'Rekapitulasi anggaran, neraca, kwitansi, dan pertanggungjawaban' },
   { id: 'cat-4', name: 'Kontrak & Perjanjian', color: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 border-amber-200', iconName: 'FileSignature', description: 'MOU, surat perjanjian kerja sama, dan dokumen legal' },
   { id: 'cat-5', name: 'Kepegawaian', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300 border-purple-200', iconName: 'Users', description: 'SK Pengangkatan, berkas SDM, data presensi, dan sertifikat' },
   { id: 'cat-6', name: 'SOP & Regulasi', color: 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300 border-rose-200', iconName: 'BookOpen', description: 'Standard Operating Procedure, petunjuk teknis, dan aturan resmi' },
@@ -45,7 +45,7 @@ export const INITIAL_DOCUMENTS: DocumentItem[] = [
     fileSize: 1850000, // 1.85 MB
     fileType: 'xls',
     mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    category: 'Laporan Keuangan',
+    category: 'Memo',
     description: 'Rincian pengeluaran operasional, pendapatan divisi, serta audit internal belanja inventaris TW II.',
     uploader: 'Siti Rahmawati (Finance Lead)',
     uploadDate: '2026-07-10',

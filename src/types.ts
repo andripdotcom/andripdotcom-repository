@@ -1,7 +1,7 @@
 export type DocumentCategory = 
   | 'Surat Masuk'
   | 'Surat Keluar'
-  | 'Laporan Keuangan'
+  | 'Memo'
   | 'Kontrak & Perjanjian'
   | 'Kepegawaian'
   | 'SOP & Regulasi'

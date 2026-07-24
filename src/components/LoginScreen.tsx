@@ -117,7 +117,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
                   </button>
                 </div>
                 <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400">
-                  <span>Password default: <strong className="text-slate-200 font-mono">admin</strong></span>
+                  <span><strong className="text-slate-200 font-mono"></strong></span>
                 </div>
               </div>
 

@@ -59,7 +59,7 @@ export const GoogleDrivePickerModal: React.FC<GoogleDrivePickerModalProps> = ({
   const handleImport = (file: DriveFileItem) => {
     const sizeInBytes = file.size ? parseInt(file.size, 10) : 1024 * 1024;
     let cat: DocumentCategory = 'Surat Masuk';
-    if (file.mimeType.includes('spreadsheet') || file.mimeType.includes('excel')) cat = 'Laporan Keuangan';
+    if (file.mimeType.includes('spreadsheet') || file.mimeType.includes('excel')) cat = 'Memo';
     if (file.mimeType.includes('pdf')) cat = 'SOP & Regulasi';
 
     const newDoc: DocumentItem = {
