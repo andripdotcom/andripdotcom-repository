@@ -95,6 +95,19 @@ app.get("/api/drive/list", async (req, res) => {
   }
 });
 
+app.get("/api/test-db", async (_req, res) => {
+  try {
+    const [rows] = await db.query("SELECT NOW() AS waktu");
+    res.json(rows);
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+});
+
 async function startServer() {
   // Vite middleware setup
   if (process.env.NODE_ENV !== "production") {
